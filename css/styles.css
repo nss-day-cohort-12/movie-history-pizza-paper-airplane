@@ -1,0 +1,12 @@
+#leftBox, #centerBox, #rightBox {
+  width: 200px;
+  height: 300px;
+  border: 2px solid red;
+  float: left;
+  margin: 20px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}

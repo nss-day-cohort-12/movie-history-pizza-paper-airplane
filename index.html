@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body ng-app="movieHistory">
+  <nav>
+    <a href="#/findNew">Find New Movies</a>
+    <a href="#/searchYour">Search Your Movies</a>
+    <a href="#/login">Login/Register/Logout</a>
+  </nav>
+
+  <a href="#/showUnwatched">Show Unwatched</a>
+  <a href="#/showWatched">Show Watched</a>
+
+  <div ng-view></div>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="javascripts/app.js"></script>
+  <script src="javascripts/controllers/root-ctrl.js"></script>
+  <script src="javascripts/controllers/find-new-ctrl.js"></script>
+  <script src="javascripts/controllers/search-your-ctrl.js"></script>
+  <script src="javascripts/controllers/login-ctrl.js"></script>
+</body>
+</html>
