@@ -1,3 +1,5 @@
+"use strict";
+
 var app = angular.module("movieHistory", ['ngRoute'])
   .constant('firebaseURL', 'https://pizzapaperairplane.firebaseio.com/');  // ngRoute object from angular-route is dependency -- needed to run
 

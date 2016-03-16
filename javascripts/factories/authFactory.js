@@ -1,4 +1,5 @@
 "use strict";
+
 app.factory("authFactory", (firebaseURL) => {
   let ref = new Firebase(firebaseURL);
 

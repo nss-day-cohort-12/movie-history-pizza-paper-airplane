@@ -1,3 +1,5 @@
+"use strict";
+
 app.controller("FindNewCtrl", ["$scope", "$http",
   
   function($scope,$http) {

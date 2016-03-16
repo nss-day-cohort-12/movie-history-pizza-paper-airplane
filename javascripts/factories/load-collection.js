@@ -1,3 +1,5 @@
+"use strict";
+
 app.factory("load-collection", function($q, $http) {
   function getCollection() {
     return $q(function(resolve, reject) {
