@@ -1,20 +1,25 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
 var watch = require('gulp-watch');
-//var source = require('vinyl-source-stream');
-// var buffer = require('vinyl-buffer');
-var gutil = require('gulp-util');
-var sourcemaps = require('gulp-sourcemaps');
-//var assign = require('lodash.assign');
+var jshint = require('gulp-jshint');
+var sass = require('gulp-sass');
 
-gulp.task('default',['sassify','watch']);
+gulp.task('default', ['sassify', 'lint', 'watch']);
 
-gulp.task('watch',function() {
-  gulp.watch('./sass/**/*.scss',['sassify']);
+gulp.task('watch', function() {
+  gulp.watch(['./javascripts/**/*.js', './sass/**/*.scss' ], ['lint', 'sassify']);
 });
 
-gulp.task('sassify',function() {
+
+gulp.task('sassify', function () {
   return gulp.src('./sass/**/*.scss')
-    .pipe(sass().on('error',sass.logError))
+    .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./css'));
+});
+
+gulp.task('lint', function() {
+  return gulp.src('./javascripts/**/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'))
+    .on('error', function() {}
+  );
 });
