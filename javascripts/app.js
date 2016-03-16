@@ -1,4 +1,5 @@
-var app = angular.module("movieHistory", ['ngRoute']);  // ngRoute object from angular-route is dependency -- needed to run
+var app = angular.module("movieHistory", ['ngRoute'])
+  .constant('firebaseURL', 'https://pizzapaperairplane.firebaseio.com/');  // ngRoute object from angular-route is dependency -- needed to run
 
 app.config(['$routeProvider',  // $routeProvider object is given to us by ngRoute
   function($routeProvider) {
