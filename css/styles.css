@@ -1,4 +1,4 @@
-#leftBox, #centerBox, #rightBox {
+#leftBox, #centerBox, #rightBox, #movieBox {
   width: 200px;
   height: 286px;
   border: 2px solid red;

@@ -1,19 +1,24 @@
-app.controller("SearchYourCtrl", ["$scope", "$http",
-  
-  function($scope,$http) {
-    // $scope.searchOMDB = function() {
-    //   console.log("I see searchString =",$scope.searchString.replace(" ","+"));
-    //   $http({
-    //     method: "GET",
-    //     url: "http://www.omdbapi.com/?t=" + $scope.searchString.replace(" ","+")
-    //   })
-    //   .then(function(objReceived) {
-    //     console.log("got",objReceived.data);
-    //     $("#leftBox").html(`<img src='${objReceived.data.Poster}'>`);
-    //   }),
-    //   function(error) {
-    //     console.log("mayhem!!");
-    //   }
-    // };
+app.controller("SearchYourCtrl", ["$scope", "load-collection",
+  function($scope,loadCollection) {
+    $scope.showWatched = true;  // initialize
+    $scope.showWatchedButton = false;  // initialize
+
+    $scope.toggleWatched = function() {
+        $scope.showWatched = !$scope.showWatched;
+        $scope.showWatchedButton = !$scope.showWatchedButton;
+    }
+
+    loadCollection.then(
+      function(movieArray) {
+        $scope.movies = movieArray;
+      },
+      function () {
+
+      }
+    );
+
+    $scope.myCustomFilter = function(movie) {
+        return movie.watched === $scope.showWatched;
+    }
   }
 ]);
