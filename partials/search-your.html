@@ -6,7 +6,8 @@
     <div id="movieBox">
       <img ng-src={{movie.posterUrl}}>
       <p>rating: {{movie.stars}} stars</p>
-      <button id="watched" ng-hide="showWatchedButton">Move to Watched</button>
+      <button id="watched" ng-hide="hideWatchedButton" ng-click="addToWatched(movie)">Move to Watched</button>
+      <p ng-hide="hideWatchedText">watched</p>
     </div>
   </div>
 </section>
