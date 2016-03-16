@@ -1,6 +1,12 @@
 <section>
-  <p>This is the view for SearchYour</p>
-  <input type="text" ng-model="searchString">
-  <button ng-click="searchOMDB()">Search Your Movies</button>
-
+  <p>Your Movie Collection</p>
+  <button id="showUnwatched" ng-click="toggleWatched()">Show Unwatched</button>
+  <button id="showWatched" ng-click="toggleWatched()">Show Watched</button>
+  <div ng-repeat="movie in movies | filter:myCustomFilter">
+    <div id="movieBox">
+      <img ng-src={{movie.posterUrl}}>
+      <p>rating: {{movie.stars}} stars</p>
+      <button id="watched" ng-hide="showWatchedButton">Move to Watched</button>
+    </div>
+  </div>
 </section>
