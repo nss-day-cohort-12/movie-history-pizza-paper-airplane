@@ -9,6 +9,9 @@ app.factory("load-collection", function($q, $http) {
         function(objectFromJSONFile) {
           var newArray = [];
           for(var key in objectFromJSONFile.data) {
+            console.log("key",key);
+            console.log("objectFromJSONFile.data",objectFromJSONFile.data);
+            objectFromJSONFile.data.key = key;
             newArray.push(objectFromJSONFile.data[key]);
           }
           resolve(newArray);
