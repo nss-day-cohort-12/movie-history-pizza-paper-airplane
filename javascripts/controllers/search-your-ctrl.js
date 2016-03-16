@@ -1,3 +1,5 @@
+"use strict";
+
 app.controller("SearchYourCtrl", ["$scope", "$http", "load-collection",
   function($scope,$http,loadCollection) {
     $scope.showWatched = true;  // initialize

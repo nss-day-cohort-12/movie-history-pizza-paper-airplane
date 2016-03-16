@@ -1,3 +1,5 @@
+"use strict";
+
 app.controller("RootCtrl", ["$scope",
   function() {
     console.log("RootCtrl is running");
