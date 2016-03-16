@@ -4,7 +4,7 @@ app.factory("load-collection", function($q, $http) {
   function getCollection() {
     return $q(function(resolve, reject) {
       $http({  // $http returns a promise
-        url: "https://pizzapaperairplane.firebaseio.com/movies/.json",
+        url: "https://mb-movie-history.firebaseio.com/movies/.json",
         method: "GET"
       }).
       then(
