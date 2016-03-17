@@ -1,3 +1,5 @@
+"use strict";
+
 app.controller("SearchYourCtrl", ["$scope", "$http", "load-collection",
   function($scope,$http,loadCollection) {
     $scope.showWatched = true;  // initialize
@@ -34,7 +36,7 @@ app.controller("SearchYourCtrl", ["$scope", "$http", "load-collection",
 
     $scope.patchObject = function(movie) {
       $http({
-        url: `https://pizzapaperairplane.firebaseio.com/movies/????.json`,
+        url: `https://mb-movie-history.firebaseio.com/movies/????.json`,
         method: "PATCH",
         data: { watched: movie.watched }
       })

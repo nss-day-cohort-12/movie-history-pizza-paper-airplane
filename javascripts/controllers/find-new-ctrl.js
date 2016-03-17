@@ -1,3 +1,5 @@
+"use strict";
+
 app.controller("FindNewCtrl", ["$scope", "$http",
   
   function($scope,$http) {
@@ -40,7 +42,7 @@ app.controller("FindNewCtrl", ["$scope", "$http",
 
     $scope.postObject = function(obj) {
       $http({
-        url: "https://pizzapaperairplane.firebaseio.com/movies/.json",
+        url: "https://mb-movie-history.firebaseio.com/movies/.json",
         method: "POST",
         data: {
           title: obj.Title,
